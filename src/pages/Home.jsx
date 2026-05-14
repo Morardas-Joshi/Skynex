@@ -33,6 +33,11 @@ const Home = () => {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        {/* Subtle Grid Background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{ backgroundImage: 'radial-gradient(#000000 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+        />
+        
         {/* Animated Background Orbs */}
         <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
           <motion.div 
@@ -55,99 +60,120 @@ const Home = () => {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:col-span-5"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-6 border-primary/20 shadow-primary/10 shadow-lg"
+              className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-6 border-primary/20 shadow-lg"
             >
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-ping" />
               <span className="text-sm font-medium text-primary uppercase tracking-wider">Next-Gen Enterprise Solutions</span>
             </motion.div>
-            <h1 className="text-5xl md:text-8xl font-space font-bold leading-[1.1] mb-6 tracking-tighter">
-              Build the <span className="text-gradient">Future</span> of Your Business
+            <h1 className="text-5xl md:text-8xl font-space font-bold leading-[1.1] mb-6 tracking-tighter text-dark">
+              AI-Driven <span className="text-gradient">Enterprise</span> Intelligence
             </h1>
             <p className="text-xl text-dark/60 mb-8 leading-relaxed max-w-xl">
-              Skynex Technologies delivers enterprise-grade Odoo ERP, AI/ML, automation, and web solutions designed to accelerate digital transformation.
+              SkyNex Technologies empowers businesses with real-time AI analytics, Odoo ERP integration, and intelligent automation for the modern era.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="btn-primary group relative overflow-hidden">
-                <span className="relative z-10">Get Started Now</span>
+                <span className="relative z-10">Deploy AI Now</span>
                 <motion.div 
                   className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500"
                 />
                 <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
               </Link>
               <Link to="/services" className="btn-secondary group">
-                <span className="group-hover:text-primary transition-colors">Our Services</span>
+                <span className="group-hover:text-primary transition-colors">View Dashboard</span>
               </Link>
             </div>
           </motion.div>
 
-          {/* Hero Visual */}
+          {/* Hero Visual - Realistic AI Dashboard */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "backOut" }}
-            className="relative perspective-1000"
+            className="relative perspective-1000 lg:col-span-7"
           >
-            <div className="relative z-10 p-4 animate-float">
-              <div className="glass-card p-2 rounded-[2.5rem] overflow-hidden border-white/60 shadow-2xl rotate-y-12 transition-transform duration-700 hover:rotate-y-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Dashboard Preview" 
-                  className="rounded-[2rem] w-full shadow-lg"
-                />
+            <div className="relative z-10 p-2">
+              {/* Main Video Background in Glass Container */}
+              <div className="glass-card p-2 rounded-[2.5rem] overflow-hidden border-white/60 shadow-2xl bg-white/40 backdrop-blur-3xl">
+                <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-dark/5 shadow-inner">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/video_homepage.webm" type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+                  {/* Dashboard Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent flex flex-col justify-end p-8">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-[10px] text-white/90 font-bold uppercase tracking-widest">System Operational</span>
+                    </div>
+                    <div className="text-2xl font-bold text-white mb-4">Neural Network Core v4.2</div>
+                    <div className="flex space-x-6">
+                      <div>
+                        <div className="text-[10px] text-white/60 uppercase font-bold">Latency</div>
+                        <div className="text-xl font-bold text-white">12ms</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-white/60 uppercase font-bold">Accuracy</div>
+                        <div className="text-xl font-bold text-white">99.8%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
-              {/* Floating Dashboard Cards */}
+              {/* Floating Real-time Cards */}
               <motion.div
-                animate={{ 
-                  y: [0, -20, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-10 -right-6 w-52 glass-card p-5 shadow-2xl border-primary/20 backdrop-blur-2xl"
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-12 -right-8 w-56 glass-card p-5 shadow-xl border-primary/20 backdrop-blur-2xl"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase font-bold text-dark/40 tracking-widest">Revenue Growth</span>
-                  <BarChart2 className="w-5 h-5 text-primary" />
+                  <span className="text-[10px] uppercase font-bold text-dark/40 tracking-widest">Active Nodes</span>
+                  <div className="px-2 py-0.5 rounded-full bg-green-500/20 text-green-600 text-[10px] font-bold">LIVE</div>
                 </div>
-                <div className="text-3xl font-bold text-gradient">+124%</div>
-                <div className="w-full bg-primary/10 h-2 rounded-full mt-3 overflow-hidden">
+                <div className="text-3xl font-bold text-dark tracking-tighter">1,284 <span className="text-sm font-normal text-dark/30">Units</span></div>
+                <div className="w-full bg-primary/10 h-1.5 rounded-full mt-3 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
-                    animate={{ width: '85%' }}
-                    transition={{ duration: 2, delay: 1.5 }}
+                    animate={{ width: '92%' }}
+                    transition={{ duration: 2, delay: 1 }}
                     className="h-full bg-gradient-to-r from-primary to-primary-neon rounded-full" 
                   />
                 </div>
               </motion.div>
 
               <motion.div
-                animate={{ 
-                  y: [0, 20, 0],
-                  x: [0, -10, 0]
-                }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-12 -left-12 w-64 glass-card p-5 shadow-2xl border-secondary/20 backdrop-blur-2xl"
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-10 -left-8 w-64 glass-card p-5 shadow-2xl border-white/40 bg-white/60 backdrop-blur-2xl"
               >
                 <div className="flex items-center space-x-4 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center animate-pulse">
+                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
                     <Zap className="w-5 h-5 text-secondary" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-tight">AI Automation</div>
-                    <div className="text-[10px] text-dark/40 font-medium">99.9% Efficiency Achieved</div>
+                    <div className="text-[10px] text-dark/40 font-bold uppercase">Efficiency</div>
+                    <div className="text-lg font-bold text-dark">+24.8% <span className="text-[10px] text-green-500 font-normal">↑ Today</span></div>
                   </div>
                 </div>
-                <div className="h-1 bg-secondary/10 w-full rounded-full" />
+                <div className="h-1 bg-dark/5 w-full rounded-full" />
               </motion.div>
             </div>
           </motion.div>
