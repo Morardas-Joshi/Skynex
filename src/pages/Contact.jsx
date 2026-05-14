@@ -7,11 +7,27 @@ import GlassCard from '../components/GlassCard';
 const Contact = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to an API
-    // Since you are on Vercel, you can use a Serverless Function later
-    navigate('/thank-you');
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        navigate('/thank-you');
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      navigate('/thank-you'); // Navigate anyway for UX, or handle error
+    }
   };
 
   return (
