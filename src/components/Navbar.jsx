@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,15 +34,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-neon rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
-            <span className="text-white font-bold text-xl">S</span>
-          </div>
-          <span className="text-2xl font-space font-bold tracking-tight">
-            Skynex<span className="text-primary">.</span>
-          </span>
+        <Link to="/">
+          <Logo />
         </Link>
 
         {/* Desktop Menu */}
