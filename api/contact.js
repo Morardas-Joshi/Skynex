@@ -20,9 +20,10 @@ export default async function handler(req, res) {
   });
 
   try {
-    await transporter.sendMail({
-      from: `"Skynex Contact Form" <${process.env.SMTP_USER}>`,
-      to: 'contact@skynextechnologies.com',
+    const info = await transporter.sendMail({
+      from: `"Skynex Leads" <${process.env.SMTP_USER}>`,
+      to: 'imagika484@gmail.com', // Updated to your Gmail
+      replyTo: email, // This lets you reply directly to the customer
       subject: `New Lead: ${service} from ${name}`,
       text: `
         Name: ${name}
