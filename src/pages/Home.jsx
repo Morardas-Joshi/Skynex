@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award } from 'lucide-react';
+import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GlassCard from '../components/GlassCard';
 
@@ -65,34 +65,47 @@ const Home = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-5"
+            className="lg:col-span-6"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-6 border-primary/20 shadow-lg"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-paper-3 shadow-sm mb-8"
             >
-              <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-ping" />
-              <span className="text-sm font-medium text-primary uppercase tracking-wider">Next-Gen Enterprise Solutions</span>
+              <span className="px-2 py-0.5 rounded-full bg-skynex-grad text-white text-[10px] font-bold uppercase tracking-wider mr-3">New</span>
+              <span className="text-sm font-medium text-ink-2">Agentic AI meets Odoo — now shipping</span>
             </motion.div>
-            <h1 className="text-5xl md:text-8xl font-space font-bold leading-[1.1] mb-6 tracking-tighter text-dark">
-              AI-Driven <span className="text-gradient">Enterprise</span> Intelligence
+            <h1 className="text-5xl md:text-7xl font-sora font-extrabold leading-[1.05] mb-6 tracking-tight text-ink">
+              Odoo experts who make your ERP <span className="text-gradient">genuinely intelligent.</span>
             </h1>
-            <p className="text-xl text-dark/60 mb-8 leading-relaxed max-w-xl">
-              SkyNex Technologies empowers businesses with real-time AI analytics, Odoo ERP integration, and intelligent automation for the modern era.
+            <p className="text-xl text-ink-2 mb-10 leading-relaxed max-w-xl">
+              SkyNex Technologies is your end-to-end Odoo & AI partner. From consulting and implementation to agentic automation — one team that speaks both languages, fluently.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-primary group relative overflow-hidden">
-                <span className="relative z-10">Deploy AI Now</span>
-                <motion.div 
-                  className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500"
-                />
-                <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
+              <Link to="/contact" className="btn-primary group">
+                <span>Book a free consultation</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/services" className="btn-secondary group">
-                <span className="group-hover:text-primary transition-colors">View Dashboard</span>
+              <Link to="/services" className="btn-secondary">
+                <span>Explore services</span>
               </Link>
+            </div>
+            
+            {/* Hero Meta Statistics */}
+            <div className="mt-12 pt-8 border-t border-paper-3 flex flex-wrap gap-x-12 gap-y-6">
+              <div>
+                <div className="text-2xl font-sora font-bold text-gradient">40+</div>
+                <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Odoo implementations</div>
+              </div>
+              <div>
+                <div className="text-2xl font-sora font-bold text-gradient">12</div>
+                <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">AI agents in production</div>
+              </div>
+              <div>
+                <div className="text-2xl font-sora font-bold text-gradient">24/7</div>
+                <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Support & AMC</div>
+              </div>
             </div>
           </motion.div>
 
@@ -101,12 +114,12 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "backOut" }}
-            className="relative perspective-1000 lg:col-span-7"
+            className="relative perspective-1000 lg:col-span-6"
           >
             <div className="relative z-10 p-2">
               {/* Main Video Background in Glass Container */}
-              <div className="glass-card p-2 rounded-[2.5rem] overflow-hidden border-white/60 shadow-2xl bg-white/40 backdrop-blur-3xl">
-                <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-dark/5 shadow-inner">
+              <div className="glass-card p-2 rounded-[2.5rem] overflow-hidden border-paper-3 shadow-premium bg-white/60 backdrop-blur-3xl">
+                <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-paper-2 shadow-inner">
                   <video 
                     autoPlay 
                     muted 
@@ -142,19 +155,19 @@ const Home = () => {
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-12 -right-8 w-56 glass-card p-5 shadow-xl border-primary/20 backdrop-blur-2xl"
+                className="absolute -top-12 -right-8 w-64 bg-white border border-paper-3 p-5 rounded-2xl shadow-premium backdrop-blur-2xl"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase font-bold text-dark/40 tracking-widest">Active Nodes</span>
-                  <div className="px-2 py-0.5 rounded-full bg-green-500/20 text-green-600 text-[10px] font-bold">LIVE</div>
+                  <span className="text-[10px] uppercase font-bold text-ink-3 tracking-widest">Active Nodes</span>
+                  <div className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 text-[10px] font-bold">LIVE</div>
                 </div>
-                <div className="text-3xl font-bold text-dark tracking-tighter">1,284 <span className="text-sm font-normal text-dark/30">Units</span></div>
-                <div className="w-full bg-primary/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div className="text-3xl font-sora font-bold text-ink tracking-tighter">1,284 <span className="text-sm font-normal text-ink-4">Units</span></div>
+                <div className="w-full bg-paper-2 h-1.5 rounded-full mt-3 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: '92%' }}
                     transition={{ duration: 2, delay: 1 }}
-                    className="h-full bg-gradient-to-r from-primary to-primary-neon rounded-full" 
+                    className="h-full bg-skynex-grad rounded-full" 
                   />
                 </div>
               </motion.div>
@@ -162,7 +175,7 @@ const Home = () => {
               <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-10 -left-8 w-64 glass-card p-5 shadow-2xl border-white/40 bg-white/60 backdrop-blur-2xl"
+                className="absolute -bottom-10 -left-8 w-64 bg-white/80 border border-white p-5 rounded-2xl shadow-2xl backdrop-blur-2xl"
               >
                 <div className="flex items-center space-x-4 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
@@ -209,58 +222,89 @@ const Home = () => {
 
       {/* Services Section */}
       <motion.section 
+        id="services"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true }}
         variants={sectionVariants}
-        className="section-padding relative overflow-hidden"
+        className="section-padding bg-paper-2"
       >
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div variants={itemVariants} className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-space font-bold mb-4">Innovative Solutions for the <span className="text-gradient">Digital Future</span></h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
-          </motion.div>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+            <div className="max-w-2xl">
+              <div className="eyebrow">What we do</div>
+              <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
+                Two practices. <span className="text-gradient">One partner.</span>
+              </h2>
+              <p className="text-lg text-ink-3 mt-4">
+                A full-stack Odoo team paired with an AI practice that ships. We cover every phase — from first workshop through post-launch optimization.
+              </p>
+            </div>
+            <Link to="/services" className="btn-secondary group">
+              <span>Get a proposal</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { 
-                title: 'Odoo ERP Solutions', 
-                desc: 'Optimize operations with custom Odoo ERP implementation, integration, and workflow automation.',
-                icon: Briefcase,
-                color: 'text-primary'
-              },
-              { 
-                title: 'AI & Machine Learning', 
-                desc: 'Leverage intelligent AI systems, predictive analytics, and automation to drive innovation.',
-                icon: Cpu,
-                color: 'text-secondary'
-              },
-              { 
-                title: 'Web Development', 
-                desc: 'Build premium responsive websites and scalable enterprise applications with modern UI/UX.',
-                icon: Globe,
-                color: 'text-primary'
-              },
-              { 
-                title: 'Business Automation', 
-                desc: 'Automate repetitive tasks and improve efficiency with smart automation systems.',
-                icon: Zap,
-                color: 'text-secondary'
-              }
-            ].map((service, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="h-full">
-                <GlassCard className="h-full hover-lift group">
-                  <div className={`w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 border border-white/50 group-hover:rotate-6 transition-transform duration-500`}>
-                    <service.icon className={`w-7 h-7 ${service.color}`} />
+          {/* Odoo Practice */}
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-sm font-bold uppercase tracking-widest text-ink-2">Odoo Practice</span>
+              <div className="h-px bg-paper-3 flex-1" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Odoo Consulting", desc: "Requirements, fit-gap analysis, and a pragmatic module roadmap tuned to your industry.", icon: <Users /> },
+                { title: "Odoo Implementation", desc: "End-to-end rollout for SMB and enterprise — configuration, data migration, training.", icon: <Settings /> },
+                { title: "Odoo Customization", desc: "Custom modules and workflows built to Odoo standards and upgrade-safe for the long haul.", icon: <Code /> }
+              ].map((svc, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ y: -5 }}
+                  className="bg-white p-8 rounded-2xl border border-paper-3 shadow-sm hover:shadow-premium transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-skynex-soft border border-primary/10 flex items-center justify-center text-primary mb-6">
+                    {svc.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-dark/60 text-sm leading-relaxed mb-6">{service.desc}</p>
-                  <Link to={`/services`} className="text-primary font-bold text-sm flex items-center group/link">
-                    Explore Now <ArrowRight className="w-4 h-4 ml-1 group-hover/link:translate-x-2 transition-transform" />
+                  <h3 className="text-xl font-sora font-bold text-ink mb-3">{svc.title}</h3>
+                  <p className="text-ink-3 text-sm leading-relaxed mb-4">{svc.desc}</p>
+                  <Link to="/services" className="text-primary text-xs font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                    Learn more <ArrowRight className="w-3 h-3" />
                   </Link>
-                </GlassCard>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* AI Practice */}
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-sm font-bold uppercase tracking-widest text-ink-2">AI Practice</span>
+              <div className="h-px bg-paper-3 flex-1" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: "Agentic AI", desc: "Autonomous agents that take action across your stack.", icon: <Cpu /> },
+                { title: "Workflow Automation", desc: "Replace repetitive tasks with reliable AI pipelines.", icon: <Zap /> },
+                { title: "AI Strategy", desc: "Use-case discovery and ROI modeling for your AI journey.", icon: <BarChart /> },
+                { title: "AI Integration", desc: "Drop AI into Odoo with secure, auditable connectors.", icon: <LinkIcon /> }
+              ].map((svc, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ y: -5 }}
+                  className="bg-white p-8 rounded-2xl border border-paper-3 shadow-sm hover:shadow-premium transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-secondary mb-6 group-hover:bg-skynex-grad group-hover:text-white transition-colors duration-300">
+                    {svc.icon}
+                  </div>
+                  <h3 className="text-lg font-sora font-bold text-ink mb-3">{svc.title}</h3>
+                  <p className="text-ink-3 text-xs leading-relaxed mb-4">{svc.desc}</p>
+                  <Link to="/services" className="text-primary text-xs font-bold flex items-center gap-2">
+                    Learn more <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>

@@ -8,31 +8,48 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#8B5CF6", // Premium Purple
-          light: "#E9D5FF",   // Light Lavender
-          neon: "#A855F7",    // Neon Violet
+          DEFAULT: "#7c3aed", // Purple
+          light: "#a855f7",   // Violet
+          neon: "#6366f1",    // Indigo
+          dark: "#0b1a4a",    // Navy
         },
         secondary: {
-          DEFAULT: "#67E8F9", // Soft Cyan
+          DEFAULT: "#4f46e5", // Blue
         },
-        background: "#F8FAFF", // Soft White
-        dark: "#111827",       // Dark Text
+        navy: {
+          900: "#0b1a4a",
+          800: "#122260",
+          700: "#1c2f7a",
+          600: "#2a3f95",
+        },
+        ink: {
+          DEFAULT: "#0b1a4a",
+          2: "#2a3560",
+          3: "#5b6690",
+          4: "#8a95bd",
+        },
+        paper: {
+          DEFAULT: "#ffffff",
+          2: "#f7f8ff",
+          3: "#eef0ff",
+        },
+        background: "#ffffff",
+        dark: "#0b1a4a",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        sora: ['Sora', 'sans-serif'],
         space: ['Space Grotesk', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%)',
-        'orb-purple': 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)',
-        'orb-cyan': 'radial-gradient(circle, rgba(103, 232, 249, 0.4) 0%, transparent 70%)',
+        'skynex-grad': 'linear-gradient(135deg, #c084fc 0%, #a855f7 25%, #7c3aed 55%, #6366f1 100%)',
+        'skynex-soft': 'linear-gradient(135deg, #f5f0ff 0%, #ede9ff 50%, #e0e7ff 100%)',
       },
       boxShadow: {
-        'premium': '0 20px 50px rgba(139, 92, 246, 0.1)',
-        'neon': '0 0 20px rgba(168, 85, 247, 0.3)',
-        'glass': '0 8px 32px 0 rgba(139, 92, 246, 0.1)',
+        'premium': '0 10px 30px rgba(11,26,74,0.10), 0 40px 80px rgba(124,58,237,0.14)',
+        'neon': '0 6px 18px rgba(124,58,237,0.35)',
+        'glass': '0 8px 32px 0 rgba(11, 26, 74, 0.05)',
       },
       animation: {
         'float': 'float 10s ease-in-out infinite',

@@ -16,6 +16,7 @@ import AIML from './pages/AIML';
 import WebDev from './pages/WebDev';
 import Automation from './pages/Automation';
 import Contact from './pages/Contact';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
             <Route path="/services/web-development" element={<WebDev />} />
             <Route path="/services/automation" element={<Automation />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </AnimatePresence>
       </main>
