@@ -72,22 +72,32 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-paper-3 shadow-sm mb-8"
             >
-              <span className="px-2 py-0.5 rounded-full bg-skynex-grad text-white text-[10px] font-bold uppercase tracking-wider mr-3">New</span>
-              <span className="text-sm font-medium text-ink-2">Agentic AI meets Odoo — now shipping</span>
+              <div className="w-6 h-6 rounded-full bg-skynex-grad flex items-center justify-center mr-3 shadow-sm">
+                <Zap className="w-3.5 h-3.5 text-white" />
+              </div>
+              <span className="text-sm font-medium text-ink-2">Where Odoo Expertise Meets Agentic AI</span>
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-sora font-extrabold leading-[1.05] mb-6 tracking-tight text-ink">
+            {/* <h1 className="text-5xl md:text-7xl font-sora font-extrabold leading-[1.05] mb-6 tracking-tight text-ink">
               Odoo experts who make your ERP <span className="text-gradient">genuinely intelligent.</span>
+            </h1> */}
+            <h1 
+              className="font-sora font-extrabold leading-[1.1] mb-6 tracking-tight text-ink"
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 3.8rem)' }}
+            >
+              Your Trusted <br />
+              <span className="text-gradient">Odoo & AI</span> <br />
+              Automation Partner.
             </h1>
             <p className="text-xl text-ink-2 mb-10 leading-relaxed max-w-xl">
-              SkyNex Technologies is your end-to-end Odoo & AI partner. From consulting and implementation to agentic automation — one team that speaks both languages, fluently.
+              We implement Odoo ERP and build AI agents that plug right into it, so your team stops copy-pasting between tools and starts closing work up to 40% faster.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="btn-primary group">
-                <span>Book a free consultation</span>
+                <span>Book a Free Discovery Call</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link to="/services" className="btn-secondary">
-                <span>Explore services</span>
+                <span>Explore Our Services</span>
               </Link>
             </div>
             
@@ -174,46 +184,75 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Dynamic Infinite Floating Bubbles */}
-        <div className="absolute inset-0 z-[999] pointer-events-none overflow-hidden">
-          {[...Array(8)].map((_, i) => {
-            const size = 30 + Math.random() * 50;
-            return (
-              <motion.div
-                key={`dynamic-bubble-${i}`}
-                initial={{ 
-                  x: Math.random() * 800 - 400, 
-                  y: Math.random() * 600 - 300,
-                  opacity: 0.4
-                }}
+        {/* Ultra-Advanced SkyNex Neural Environment */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-transparent">
+          {/* Layer 1: Ambient Pulse Core */}
+          <motion.div 
+            animate={{ 
+              background: [
+                "radial-gradient(circle at 30% 30%, rgba(123, 63, 228, 0.08) 0%, transparent 60%)",
+                "radial-gradient(circle at 70% 70%, rgba(255, 122, 245, 0.08) 0%, transparent 60%)",
+                "radial-gradient(circle at 30% 30%, rgba(123, 63, 228, 0.08) 0%, transparent 60%)"
+              ]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute inset-0"
+          />
+
+          {/* Layer 2: Real-time Neural Mesh (Interactive dots) */}
+          <svg className="absolute inset-0 w-full h-full">
+            {[...Array(30)].map((_, i) => (
+              <motion.circle
+                key={`node-${i}`}
+                r="1.5"
+                fill="rgba(123, 63, 228, 0.5)"
+                initial={{ cx: `${Math.random() * 100}%`, cy: `${Math.random() * 100}%` }}
                 animate={{ 
-                  x: [0, 400, -200, 300, 0],
-                  y: [0, -300, 200, -100, 0],
-                  scale: [1, 1.2, 0.8, 1.1, 1],
-                  rotate: [0, 180, 360, 540, 720]
+                  cx: [`${Math.random() * 100}%`, `${Math.random() * 100}%`, `${Math.random() * 100}%`],
+                  cy: [`${Math.random() * 100}%`, `${Math.random() * 100}%`, `${Math.random() * 100}%`],
+                  opacity: [0.2, 0.6, 0.2]
                 }}
-                whileHover={{ 
-                  scale: 1.5, 
-                  opacity: 1,
-                  filter: "brightness(1.3) contrast(1.2) drop-shadow(0 0 15px rgba(123,63,228,0.5))",
-                }}
-                transition={{ 
-                  duration: 25 + Math.random() * 25,
-                  repeat: Infinity,
-                  ease: "linear",
-                  times: [0, 0.25, 0.5, 0.75, 1]
-                }}
-                className="absolute rounded-full pointer-events-auto cursor-pointer border-[1px] border-white/80 shadow-2xl backdrop-blur-[2px]"
-                style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  left: `${10 + Math.random() * 80}%`,
-                  top: `${10 + Math.random() * 80}%`,
-                  background: "radial-gradient(circle at 30% 30%, rgba(255, 122, 245, 0.8), rgba(123, 63, 228, 0.5))",
-                }}
+                transition={{ duration: 20 + i, repeat: Infinity, ease: "linear" }}
               />
-            );
-          })}
+            ))}
+            {/* Pulsing connections between random nodes */}
+            {[...Array(12)].map((_, i) => (
+              <motion.path
+                key={`conn-${i}`}
+                d={`M ${Math.random() * 100} ${Math.random() * 100} L ${Math.random() * 100} ${Math.random() * 100}`}
+                stroke="rgba(255, 122, 245, 0.15)"
+                strokeWidth="0.5"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: [0, 0.4, 0] }}
+                transition={{ duration: 10 + i, repeat: Infinity, ease: "easeInOut" }}
+              />
+            ))}
+          </svg>
+
+          {/* Layer 3: Floating 3D Tech Shards - Larger & More Premium */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={`shard-${i}`}
+              className="absolute w-64 h-64 bg-white/[0.08] border border-white/20 backdrop-blur-3xl rounded-[3rem]"
+              initial={{ rotateY: 0, rotateX: 0 }}
+              animate={{ 
+                rotateY: [0, 360], 
+                rotateX: [0, 180, 0],
+                y: [0, -70, 0],
+                x: [0, 40, 0]
+              }}
+              transition={{ 
+                duration: 30 + i * 8, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+              style={{
+                left: `${5 + i * 18}%`,
+                top: `${10 + (i % 2) * 35}%`,
+                boxShadow: '0 50px 100px -20px rgba(123, 63, 228, 0.2), inset 0 0 40px rgba(255,255,255,0.05)'
+              }}
+            />
+          ))}
         </div>
       </section>
 
