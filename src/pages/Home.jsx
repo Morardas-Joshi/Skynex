@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon, Rocket, Lightbulb, Database, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon, Rocket, Lightbulb, Database, ShieldCheck, Search, PenTool, RefreshCw } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GlassCard from '../components/GlassCard';
 
@@ -379,7 +379,7 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Statistics Section */}
+      {/* Statistics Section - Commented out as per user request
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -417,6 +417,7 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+      */}
 
       {/* Why Choose Us */}
       <motion.section 
@@ -424,52 +425,130 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
-        className="section-padding"
+        className="section-padding bg-white"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-6xl font-space font-bold mb-8">Why Businesses <span className="text-primary">Choose</span> Skynex</h2>
-            <div className="space-y-6">
-              {[
-                'Enterprise-grade Architecture',
-                'AI-driven Innovation',
-                'Scalable Solutions',
-                'Modern Technology Stack',
-                'Dedicated Technical Support',
-                'Fast Digital Transformation',
-                'Secure & Reliable Systems'
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx} 
-                  className="flex items-center space-x-3 group"
-                  whileHover={{ x: 10 }}
-                >
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 group-hover:scale-125 transition-transform" />
-                  <span className="text-lg text-dark/80 font-medium group-hover:text-primary transition-colors">{item}</span>
-                </motion.div>
-              ))}
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <motion.div variants={itemVariants} className="mb-16">
+            <div className="eyebrow">Why Skynex</div>
+            <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
+              One team that speaks <br />
+              <span className="text-gradient">Odoo and AI — fluently.</span>
+            </h2>
+            <p className="text-lg text-ink-3 mt-4 max-w-2xl">
+              We don't just implement software; we transform how your business operates by combining deep ERP expertise with cutting-edge AI automation.
+            </p>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="relative group">
-            <div className="glass-card p-12 aspect-square flex flex-col items-center justify-center text-center relative overflow-hidden group-hover:shadow-2xl transition-all duration-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+            {[
+              {
+                title: "Deep Odoo ERP Expertise",
+                desc: "Specialized in scalable Odoo implementations, customizations, integrations, and enterprise workflows."
+              },
+              {
+                title: "AI-Powered Business Automation",
+                desc: "Automate operations, reduce manual work, and improve efficiency with intelligent AI-driven solutions."
+              },
+              {
+                title: "Industry-Focused ERP Solutions",
+                desc: "Tailored ERP systems designed around real business workflows across multiple industries."
+              },
+              {
+                title: "Transparent & Agile Execution",
+                desc: "Clear communication, structured delivery, and complete project visibility from start to finish."
+              },
+              {
+                title: "End-to-End Implementation & Support",
+                desc: "From consulting and development to deployment, training, and long-term optimization."
+              },
+              {
+                title: "ROI-Driven Digital Transformation",
+                desc: "Technology solutions focused on measurable growth, operational efficiency, and business scalability."
+              }
+            ].map((item, idx) => (
               <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"
-              />
-              <Award className="w-24 h-24 text-primary mb-6 animate-glow" />
-              <h3 className="text-3xl font-space font-bold mb-4">Innovation Leader 2024</h3>
-              <p className="text-dark/60 max-w-sm">Recognized for excellence in AI implementation and enterprise digital transformation.</p>
-            </div>
-            {/* Decorative dots */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
-          </motion.div>
+                key={idx} 
+                variants={itemVariants}
+                className="flex items-start space-x-5 group"
+              >
+                <div className="shrink-0 w-10 h-10 rounded-full bg-skynex-soft flex items-center justify-center mt-1 group-hover:bg-primary/20 transition-colors duration-300">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-sora font-bold text-ink mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                  <p className="text-ink-3 leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
 
-      {/* Testimonials */}
+      {/* How We Work Section - Fine-tuned Process Flow */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+        className="pt-12 pb-24 bg-paper-2 relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Left Aligned Header - Matched to upper sections */}
+          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+            <motion.div variants={itemVariants} className="max-w-2xl text-left">
+              <div className="eyebrow uppercase tracking-[0.2em] text-primary">Execution Framework</div>
+              <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink mb-4">
+                How we <span className="text-gradient">Work</span>
+              </h2>
+              <p className="text-lg text-ink-3 leading-relaxed">
+                A proven 5-step delivery process shaped around your team — not the other way around.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="relative">
+            {/* Interconnected Dashed Line - Passing through icon centers */}
+            <div className="hidden lg:block absolute top-[48px] left-0 w-full border-t-2 border-dashed border-primary/20 -z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 relative">
+              {[
+                { step: "01", title: "Discover", desc: "Workshops, fit-gap analysis and success metrics agreed upfront.", icon: <Search className="w-5 h-5" /> },
+                { step: "02", title: "Design", desc: "Solution blueprint and AI use-cases scoped to ROI.", icon: <PenTool className="w-5 h-5" /> },
+                { step: "03", title: "Build", desc: "Configuration, custom modules and AI agents developed in sprints.", icon: <Code className="w-5 h-5" /> },
+                { step: "04", title: "Launch", desc: "UAT, training, cutover — with a steady hand on go-live weekend.", icon: <Rocket className="w-5 h-5" /> },
+                { step: "05", title: "Evolve", desc: "AMC, optimizations, new use-cases — measured every quarter.", icon: <RefreshCw className="w-5 h-5" /> }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                  className="relative group"
+                >
+                  <div className="glass-card p-6 h-full flex flex-col items-center text-center rounded-[2rem] border-white/60 shadow-premium transition-all duration-500 hover:shadow-xl hover:bg-white group-hover:border-primary/10">
+                    {/* Compact Icon - Positioned for the line */}
+                    <div className="mb-6 relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-skynex-soft text-primary flex items-center justify-center group-hover:bg-skynex-grad group-hover:text-white transition-all duration-500 shadow-sm ring-4 ring-paper-2 group-hover:ring-white">
+                        {item.icon}
+                      </div>
+                      {/* Step Number Badge */}
+                      <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-white border border-paper-3 text-[8px] font-black flex items-center justify-center text-primary/40 group-hover:text-primary shadow-sm transition-colors">
+                        {item.step}
+                      </div>
+                    </div>
+
+                    <h3 className="text-lg font-sora font-bold text-ink mb-3 leading-tight">{item.title}</h3>
+                    <p className="text-ink-3 text-[11px] leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Testimonials - Commented out as per user request
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -509,8 +588,9 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+      */}
 
-      {/* CTA Section */}
+      {/* Large Purple CTA - Commented out as per user request
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -540,6 +620,44 @@ const Home = () => {
                 Contact Sales
               </Link>
             </motion.div>
+          </div>
+        </div>
+      </motion.section>
+      */}
+
+      {/* New Professional Compact CTA */}
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+        className="py-24 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="glass-card bg-skynex-grad p-12 md:p-16 rounded-[3rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 shadow-premium">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none" 
+              style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} 
+            />
+            
+            <div className="relative z-10 max-w-2xl text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6 leading-tight">
+                Ready to make your business <br className="hidden lg:block" /> 
+                <span className="opacity-80">genuinely intelligent?</span>
+              </h2>
+              <p className="text-white/80 text-lg font-medium leading-relaxed">
+                Join the forward-thinking enterprises that have scaled their operations <br className="hidden md:block" /> with Skynex's Odoo and AI expertise.
+              </p>
+            </div>
+
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link to="/contact" className="px-8 py-4 bg-white text-primary rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300 text-center">
+                Book a Free Strategy Call
+              </Link>
+              <Link to="/services" className="px-8 py-4 border border-white/30 text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300 text-center">
+                Explore Services
+              </Link>
+            </div>
           </div>
         </div>
       </motion.section>

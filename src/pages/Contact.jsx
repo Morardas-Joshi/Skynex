@@ -60,7 +60,7 @@ const Contact = () => {
               {[
                 { icon: Mail, title: 'Email Us', info: 'contact@skynextechnologies.com', color: 'bg-blue-50 text-blue-600' },
                 { icon: Phone, title: 'Call Us', info: '+91 92745 29709', color: 'bg-purple-50 text-purple-600' },
-                { icon: MapPin, title: 'Visit Us', info: 'Tech Hub, Silicon Valley, CA', color: 'bg-pink-50 text-pink-600' },
+                { icon: MapPin, title: 'Visit Us', info: '3rd Floor, Time Square 2, Ayodhya Chowk, 150 Feet Ring Rd, Rajkot, Gujarat 360006.', color: 'bg-pink-50 text-pink-600' },
                 { icon: Clock, title: 'Working Hours', info: 'Mon - Fri, 9am - 6pm', color: 'bg-green-50 text-green-600' }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center space-x-4">
@@ -75,11 +75,13 @@ const Contact = () => {
               ))}
             </div>
 
+            {/* Book Free Consultation - Commented out as per user request
             <GlassCard className="bg-primary/5 border-primary/20 p-8">
               <h3 className="text-xl font-sora font-bold mb-4 text-ink">Book Free Consultation</h3>
               <p className="text-sm text-ink-3 mb-6">Schedule a 30-minute discovery call with our technical experts.</p>
               <button className="w-full btn-primary">Schedule Now</button>
             </GlassCard>
+            */}
           </div>
 
           {/* Contact Form */}
