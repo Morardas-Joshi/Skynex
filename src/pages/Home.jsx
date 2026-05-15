@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon } from 'lucide-react';
+import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon, Rocket, Lightbulb, Database, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GlassCard from '../components/GlassCard';
 
@@ -300,14 +300,14 @@ const Home = () => {
                 Two practices. <span className="text-gradient">One partner.</span>
               </h2> */}
               <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
-                Odoo runs your business. <br />
-                <span className="text-gradient">AI runs it better.</span>
+                Odoo runs your business.<br />
+                <span className="text-gradient"> AI runs it better.</span>
               </h2>
               <p className="text-lg text-ink-3 mt-4">
                 From ERP implementation to intelligent automation — every service is built to reduce manual work, eliminate errors, and give your operations a measurable edge.
               </p>
             </div>
-            <Link to="/services" className="btn-secondary group">
+            <Link to="/contact" className="btn-secondary group">
               <span>Get a proposal</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -315,18 +315,18 @@ const Home = () => {
 
           {/* Odoo Practice */}
           <div className="mb-20">
-            <div className="flex items-center gap-4 mb-8">
+            {/* <div className="flex items-center gap-4 mb-8">
               <span className="text-sm font-bold uppercase tracking-widest text-ink-2">Odoo Practice</span>
               <div className="h-px bg-paper-3 flex-1" />
-            </div>
+            </div> */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Odoo Implementation", desc: "From zero to fully operational — configured, migrated, and deployed for your business.", icon: <Settings /> },
+                { title: "Odoo Implementation", desc: "From zero to fully operational — configured, migrated, and deployed for your business.", icon: <Rocket /> },
                 { title: "Odoo Customization", desc: "Every workflow, module, and screen built exactly the way your business operates.", icon: <Code /> },
                 { title: "Odoo Integration", desc: "Connect Odoo to any tool, API, or AI service — and let intelligent automation do the rest.", icon: <LinkIcon /> },
-                { title: "Odoo Consulting", desc: "Honest advice on what to build, what to skip, and how to get ROI from day one.", icon: <Users /> },
-                { title: "Odoo Migration", desc: "Move to Odoo with clean data, AI-assisted mapping, and zero disruption to your operations.", icon: <Globe /> },
-                { title: "Odoo Support & Maintenance", desc: "Fast, reliable support so your Odoo system never becomes a bottleneck.", icon: <Zap /> }
+                { title: "Odoo Consulting", desc: "Honest advice on what to build, what to skip, and how to get ROI from day one.", icon: <Lightbulb /> },
+                { title: "Odoo Migration", desc: "Move to Odoo with clean data, AI-assisted mapping, and zero disruption to your operations.", icon: <Database /> },
+                { title: "Odoo Support & Maintenance", desc: "Fast, reliable support so your Odoo system never becomes a bottleneck.", icon: <ShieldCheck /> }
               ].map((svc, idx) => (
                 <motion.div 
                   key={idx}
@@ -347,7 +347,7 @@ const Home = () => {
           </div>
 
           {/* AI Practice */}
-          <div>
+          {/* <div>
             <div className="flex items-center gap-4 mb-8">
               <span className="text-sm font-bold uppercase tracking-widest text-ink-2">AI Practice</span>
               <div className="h-px bg-paper-3 flex-1" />
@@ -375,7 +375,7 @@ const Home = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </motion.section>
 
