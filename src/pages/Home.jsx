@@ -37,7 +37,6 @@ const Home = () => {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
           style={{ backgroundImage: 'radial-gradient(#000000 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
         />
-        
         {/* Animated Background Orbs */}
         <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
           <motion.div 
@@ -130,24 +129,7 @@ const Home = () => {
                     <source src="/video_homepage.webm" type="video/webm" />
                     Your browser does not support the video tag.
                   </video>
-                  {/* Dashboard Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent flex flex-col justify-end p-8">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-[10px] text-white/90 font-bold uppercase tracking-widest">System Operational</span>
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-4">Neural Network Core v4.2</div>
-                    <div className="flex space-x-6">
-                      <div>
-                        <div className="text-[10px] text-white/60 uppercase font-bold">Latency</div>
-                        <div className="text-xl font-bold text-white">12ms</div>
-                      </div>
-                      <div>
-                        <div className="text-[10px] text-white/60 uppercase font-bold">Accuracy</div>
-                        <div className="text-xl font-bold text-white">99.8%</div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Dashboard Overlay - Removed as per user request */}
                 </div>
               </div>
               
@@ -190,6 +172,48 @@ const Home = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Dynamic Infinite Floating Bubbles */}
+        <div className="absolute inset-0 z-[999] pointer-events-none overflow-hidden">
+          {[...Array(8)].map((_, i) => {
+            const size = 30 + Math.random() * 50;
+            return (
+              <motion.div
+                key={`dynamic-bubble-${i}`}
+                initial={{ 
+                  x: Math.random() * 800 - 400, 
+                  y: Math.random() * 600 - 300,
+                  opacity: 0.4
+                }}
+                animate={{ 
+                  x: [0, 400, -200, 300, 0],
+                  y: [0, -300, 200, -100, 0],
+                  scale: [1, 1.2, 0.8, 1.1, 1],
+                  rotate: [0, 180, 360, 540, 720]
+                }}
+                whileHover={{ 
+                  scale: 1.5, 
+                  opacity: 1,
+                  filter: "brightness(1.3) contrast(1.2) drop-shadow(0 0 15px rgba(123,63,228,0.5))",
+                }}
+                transition={{ 
+                  duration: 25 + Math.random() * 25,
+                  repeat: Infinity,
+                  ease: "linear",
+                  times: [0, 0.25, 0.5, 0.75, 1]
+                }}
+                className="absolute rounded-full pointer-events-auto cursor-pointer border-[1px] border-white/80 shadow-2xl backdrop-blur-[2px]"
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  left: `${10 + Math.random() * 80}%`,
+                  top: `${10 + Math.random() * 80}%`,
+                  background: "radial-gradient(circle at 30% 30%, rgba(255, 122, 245, 0.8), rgba(123, 63, 228, 0.5))",
+                }}
+              />
+            );
+          })}
         </div>
       </section>
 
