@@ -290,7 +290,7 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
-        className="section-padding bg-paper-2"
+        className="pt-12 pb-16 bg-paper-2"
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
@@ -314,7 +314,7 @@ const Home = () => {
           </div>
 
           {/* Odoo Practice */}
-          <div className="mb-20">
+          <div className="mb-0">
             {/* <div className="flex items-center gap-4 mb-8">
               <span className="text-sm font-bold uppercase tracking-widest text-ink-2">Odoo Practice</span>
               <div className="h-px bg-paper-3 flex-1" />
@@ -385,7 +385,7 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
-        className="section-padding relative"
+        className="pt-8 pb-16 relative"
       >
         <div className="max-w-7xl mx-auto glass-card p-12 bg-primary/5 border-primary/10 overflow-hidden relative">
           <motion.div 
