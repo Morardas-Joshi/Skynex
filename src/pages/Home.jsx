@@ -104,12 +104,12 @@ const Home = () => {
             {/* Hero Meta Statistics */}
             <div className="mt-12 pt-8 border-t border-paper-3 flex flex-wrap gap-x-12 gap-y-6">
               <div>
-                <div className="text-2xl font-sora font-bold text-gradient">40+</div>
+                <div className="text-2xl font-sora font-bold text-gradient">35+</div>
                 <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Odoo implementations</div>
               </div>
               <div>
-                <div className="text-2xl font-sora font-bold text-gradient">12</div>
-                <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">AI agents in production</div>
+                <div className="text-2xl font-sora font-bold text-gradient">10+</div>
+                <div className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Industries Served</div>
               </div>
               <div>
                 <div className="text-2xl font-sora font-bold text-gradient">24/7</div>
@@ -150,10 +150,10 @@ const Home = () => {
                 className="absolute -top-12 -right-8 w-64 bg-white border border-paper-3 p-5 rounded-2xl shadow-premium backdrop-blur-2xl"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase font-bold text-ink-3 tracking-widest">Active Nodes</span>
-                  <div className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 text-[10px] font-bold">LIVE</div>
+                  <span className="text-[10px] uppercase font-bold text-ink-3 tracking-widest">ACTIVE INTEGRATIONS</span>
+                  {/* <div className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-600 text-[10px] font-bold">LIVE</div> */}
                 </div>
-                <div className="text-3xl font-sora font-bold text-ink tracking-tighter">1,284 <span className="text-sm font-normal text-ink-4">Units</span></div>
+                <div className="text-3xl font-sora font-bold text-ink tracking-tighter">20+<span className="text-sm font-normal text-ink-4">Modules</span></div>
                 <div className="w-full bg-paper-2 h-1.5 rounded-full mt-3 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
@@ -174,8 +174,8 @@ const Home = () => {
                     <Zap className="w-5 h-5 text-secondary" />
                   </div>
                   <div>
-                    <div className="text-[10px] text-dark/40 font-bold uppercase">Efficiency</div>
-                    <div className="text-lg font-bold text-dark">+24.8% <span className="text-[10px] text-green-500 font-normal">↑ Today</span></div>
+                    <div className="text-[10px] text-dark/40 font-bold uppercase">TEAM EFFICIENCY GAINED</div>
+                    <div className="text-lg font-bold text-dark">+40% <span className="text-[10px] text-green-500 font-normal">↑ faster task</span></div>
                   </div>
                 </div>
                 <div className="h-1 bg-dark/5 w-full rounded-full" />
@@ -264,7 +264,7 @@ const Home = () => {
         variants={sectionVariants}
         className="section-padding bg-white/30 relative"
       >
-        <div className="max-w-7xl mx-auto">
+        {/* <div className="max-w-7xl mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-space font-bold mb-4">Trusted Technology Partner for Modern Enterprises</h2>
             <p className="text-dark/60 max-w-2xl mx-auto">
@@ -280,7 +280,7 @@ const Home = () => {
               <span key={name} className="text-2xl font-bold font-space hover:text-primary cursor-default transition-colors">{name}</span>
             ))}
           </motion.div>
-        </div>
+        </div> */}
       </motion.section>
 
       {/* Services Section */}
