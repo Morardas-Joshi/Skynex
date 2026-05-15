@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Logo = ({ className = "" }) => {
-
   return (
     <motion.div 
       className={`flex items-center space-x-1.5 ${className}`}

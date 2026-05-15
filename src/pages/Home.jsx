@@ -262,9 +262,9 @@ const Home = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
-        className="section-padding bg-white/30 relative"
+        className="relative"
       >
-        {/* <div className="max-w-7xl mx-auto">
+        {/* <div className="max-w-7xl mx-auto py-10">
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-space font-bold mb-4">Trusted Technology Partner for Modern Enterprises</h2>
             <p className="text-dark/60 max-w-2xl mx-auto">
@@ -296,11 +296,15 @@ const Home = () => {
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
             <div className="max-w-2xl">
               <div className="eyebrow">What we do</div>
-              <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
+              {/* <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
                 Two practices. <span className="text-gradient">One partner.</span>
+              </h2> */}
+              <h2 className="text-4xl md:text-5xl font-sora font-bold text-ink">
+                Odoo runs your business. <br />
+                <span className="text-gradient">AI runs it better.</span>
               </h2>
               <p className="text-lg text-ink-3 mt-4">
-                A full-stack Odoo team paired with an AI practice that ships. We cover every phase — from first workshop through post-launch optimization.
+                From ERP implementation to intelligent automation — every service is built to reduce manual work, eliminate errors, and give your operations a measurable edge.
               </p>
             </div>
             <Link to="/services" className="btn-secondary group">

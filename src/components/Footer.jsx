@@ -64,8 +64,8 @@ const Footer = () => {
           <div className="text-xs text-ink-4/40">
             © {new Date().getFullYear()} SkyNex Technologies. All rights reserved.
           </div>
-          
-          <div className="flex items-center gap-4">
+
+          {/* <div className="flex items-center gap-4">
             {[Facebook, Twitter, Linkedin, Github].map((Icon, idx) => (
               <a 
                 key={idx}
@@ -75,7 +75,7 @@ const Footer = () => {
                 <Icon className="w-5 h-5" />
               </a>
             ))}
-          </div>
+          ;</div> */}
         </div>
       </div>
     </footer>
