@@ -321,9 +321,12 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Odoo Consulting", desc: "Requirements, fit-gap analysis, and a pragmatic module roadmap tuned to your industry.", icon: <Users /> },
-                { title: "Odoo Implementation", desc: "End-to-end rollout for SMB and enterprise — configuration, data migration, training.", icon: <Settings /> },
-                { title: "Odoo Customization", desc: "Custom modules and workflows built to Odoo standards and upgrade-safe for the long haul.", icon: <Code /> }
+                { title: "Odoo Implementation", desc: "From zero to fully operational — configured, migrated, and deployed for your business.", icon: <Settings /> },
+                { title: "Odoo Customization", desc: "Every workflow, module, and screen built exactly the way your business operates.", icon: <Code /> },
+                { title: "Odoo Integration", desc: "Connect Odoo to any tool, API, or AI service — and let intelligent automation do the rest.", icon: <LinkIcon /> },
+                { title: "Odoo Consulting", desc: "Honest advice on what to build, what to skip, and how to get ROI from day one.", icon: <Users /> },
+                { title: "Odoo Migration", desc: "Move to Odoo with clean data, AI-assisted mapping, and zero disruption to your operations.", icon: <Globe /> },
+                { title: "Odoo Support & Maintenance", desc: "Fast, reliable support so your Odoo system never becomes a bottleneck.", icon: <Zap /> }
               ].map((svc, idx) => (
                 <motion.div 
                   key={idx}
