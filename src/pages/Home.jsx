@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BarChart2, Cpu, Globe, Zap, CheckCircle2, Star, Users, Briefcase, Award, Settings, Code, BarChart, Link as LinkIcon, Rocket, Lightbulb, Database, ShieldCheck, Search, PenTool, RefreshCw } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GlassCard from '../components/GlassCard';
+import TawkMessenger from '../components/TawkMessenger';
 
 const Home = () => {
   const containerVariants = {
@@ -661,6 +662,7 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+      <TawkMessenger />
     </div>
   );
 };
