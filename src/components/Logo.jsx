@@ -8,7 +8,7 @@ const Logo = ({ className = "" }) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="relative w-14 h-12 flex items-center justify-center shrink-0">
+      <div className="relative w-20 h-14 flex items-center justify-center shrink-0">
         <img 
           src="/skt_logo_transparent (1).png" 
           alt="SkyNex Logo" 

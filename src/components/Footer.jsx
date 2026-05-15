@@ -19,7 +19,9 @@ const Footer = () => {
           
           {/* Column 1: Brand & Description */}
           <div className="space-y-6">
-            <Logo />
+            <div className="bg-white inline-flex items-center px-4 py-2 rounded-xl shadow-lg">
+              <Logo />
+            </div>
             <p className="text-sm leading-relaxed text-white/50 max-w-xs">
               SkyNex Technologies is a global IT & ERP solutions provider specializing in Odoo ERP implementations, AI automation, custom software development, and digital transformation services for modern businesses.
             </p>
